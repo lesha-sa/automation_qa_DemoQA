@@ -3,9 +3,9 @@
 ## Table of contents
 
 1. #### Website https://demoqa.com
-2. #### Test framework configuration and setup
-3. #### Preparation before running tests
-4. #### Tests
+2. [Test framework configuration and setup](#test-framework-configuration-and-setup)
+3. [Preparation before running tests](#preparation-before-running-tests)
+4. [Tests](#tests)
 
 
 In this project used 'pip-tools'. All used Python packages for the current project are generates in requirements.txt
@@ -66,8 +66,10 @@ All used packages are stored in requirements.txt
 All tests are located in  ***tests*** folder
 
 To run all the tests from the root directory, you can use the following command:
-
-    pytest
+```bash
+ pytest
+```
+   
 
 To run a specific test, use the command, where * this is the name of the test.:
 

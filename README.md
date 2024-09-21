@@ -1,1 +1,1 @@
-# automation_qa_course
+#Test automation framework for testing UI web site - https://demoqa.com/

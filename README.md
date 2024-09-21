@@ -1,5 +1,4 @@
 ## Test automation framework for testing UI web site - https://demoqa.com/
-<<<<<<< HEAD
 
 ## Table of contents
 
@@ -71,7 +70,3 @@ To run all the tests from the root directory, you can use the following command:
 To run a specific test, use the command, where * this is the name of the test.:
 
      pytest tests/elements_test/*.py
-
-
-=======
->>>>>>> origin/main

@@ -3,7 +3,7 @@
 ## Table of contents
 
 1. #### Website https://demoqa.com
-2. #### Test framework configuration and setup
+2. [Test framework configuration and setup](#test-framework-configuration-and-setup)
 3. #### Preparation before running tests
 4. #### Tests
 
@@ -18,6 +18,8 @@ Below is the list of main packages with references
 related info: https://docs.pytest.org/en/latest/
 
     pip install pytest
+
+### Test framework configuration and setup
 
 ## **For ui/web testing**
 
@@ -64,11 +66,11 @@ All used packages are stored in requirements.txt
 All tests are located in  ***tests*** folder
 
 To run all the tests from the root directory, you can use the following command:
-
-    pytest
-
+```shell
+pytest
+```
 To run a specific test, use the command, where * this is the name of the test.:
 
-     pytest tests/elements_test/*.py
-
-
+```bash
+pytest tests/elements_test/*.py
+```

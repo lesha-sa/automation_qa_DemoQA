@@ -73,6 +73,3 @@ To run a specific test, use the command, where * this is the name of the test.:
 
      pytest tests/elements_test/*.py
 
-
-=======
->>>>>>> origin/main

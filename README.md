@@ -4,7 +4,7 @@
 
 1. #### Website https://demoqa.com
 2. [Test framework configuration and setup](#test-framework-configuration-and-setup)
-3. #### Preparation before running tests
+3. [Preparation before running tests](#preparation-before-running-tests)
 4. #### Tests
 
 

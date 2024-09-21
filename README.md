@@ -71,6 +71,8 @@ pytest
 ```
 To run a specific test, use the command, where * this is the name of the test.:
 
-```bash
-pytest tests/elements_test/*.py
-```
+     pytest tests/elements_test/*.py
+
+
+=======
+>>>>>>> origin/main

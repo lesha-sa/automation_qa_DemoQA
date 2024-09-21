@@ -66,7 +66,7 @@ All used packages are stored in requirements.txt
 All tests are located in  ***tests*** folder
 
 To run all the tests from the root directory, you can use the following command:
-```shell
+```bash
 pytest
 ```
 To run a specific test, use the command, where * this is the name of the test.:

@@ -9,7 +9,7 @@ class TextBoxPageLocators:
     PERMANENT_ADDRESS = (By.XPATH, '//*[@id = "permanentAddress"]')
     SUBMIT = (By.XPATH, '//*[@id = "submit"]')
 
-    # created from
+    # created form
     CREATED_FULL_NAME = (By.CSS_SELECTOR, '#output #name')
     CREATED_EMAIL = (By.CSS_SELECTOR, '#output #email')
     CREATED_CURRENT_ADDRESS = (By.CSS_SELECTOR, '#output #currentAddress')

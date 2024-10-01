@@ -1,5 +1,5 @@
 import time
-from pages.elements_page import TextBoxPage
+from pages.elements_page.text_box_page import TextBoxPage
 from conftest import driver
 
 

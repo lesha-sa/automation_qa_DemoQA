@@ -1,6 +1,4 @@
-import time
 from pages.elements_page.text_box_page import TextBoxPage
-from conftest import driver
 
 
 class TestElements:

@@ -14,55 +14,60 @@ Below is the list of main packages with references
 ### pytest
 
 related info: https://docs.pytest.org/en/latest/
-
+```bash
     pip install pytest
+```    
 ## **For ui/web testing**
 
 ### selenium
 
 related info: https://selenium-python.readthedocs.io/
-
+```bash
     pip install selenium
-
+```
 ### webdriver-manager
 
 related info:https://github.com/bonigarcia/webdrivermanager
-
+```bash
     pip install webdriver-manager
-
+```
 
 ## **Data generators**
 
 ### Faker
 
 related info: http://faker.rtfd.org/
-
+```bash
     pip install Faker
-
+```
 
 ## Preparation before running tests
 Create virtual environment.
 To create a virtual environment, execute the following commands in the command line:
-
+```bash
     pip install virtualenv
-    pip install virtualenvwrapper-win
-
+```
 To activate the virtual environment:
 
 ```bash
-venv\Scripts\activate
+  venv\Scripts\activate
 ```
 
 All used packages are stored in requirements.txt
-
+```bash
     pip install -r requirements.txt
-
+```
 
 ## Tests
 
 All tests are located in  ***tests*** folder
 
 To run all the tests from the root directory, you can use the following command:
+For the command to work, you need to perform the following steps:
+1. Clone the project
+2. Install all dependencies from the file requirements.txt
+3. Open the folder with the project and copy the path to it
+4. In the pytest.ini paste the previously copied path into the line pythonpath
 ```shell
  pytest
 ```

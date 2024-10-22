@@ -1,14 +1,12 @@
-import os
-from configparser import ConfigParser
-
 from pages.elements_page.check_box_page import CheckBoxPage
 from read_configuration import read_configuration
+
+
 
 class TestCheckBox:
     def test_check_box(self, driver):
         url = read_configuration()
-        print(type(url))
-        check_box_page = CheckBoxPage(driver, url)
+        check_box_page = CheckBoxPage(driver, f'{url}/checkbox')
         check_box_page.open()
         check_box_page.open_full_list()
         check_box_page.click_random_checkbox()

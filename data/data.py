@@ -1,6 +1,8 @@
 from dataclasses import dataclass
 
 
+"""
+create a dataclass to store randomly generated information about a person with the help of Faker"""
 
 @dataclass
 class Person:

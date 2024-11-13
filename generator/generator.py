@@ -1,7 +1,9 @@
 from data.data import Person
 from faker import Faker
 
-
+"""
+Сreate random data for Person
+"""
 faker_ru = Faker('ru_RU')
 Faker.seed()
 

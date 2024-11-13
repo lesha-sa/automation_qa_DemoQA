@@ -32,6 +32,16 @@ related info:https://github.com/bonigarcia/webdrivermanager
     pip install webdriver-manager
 ```
 
+## **Logging**
+
+### loguru
+
+pypi.org docs: https://pypi.org/project/loguru/
+related info: https://loguru.readthedocs.io/
+```bash
+pip install loguru
+```
+
 ## **Data generators**
 
 ### Faker
@@ -65,9 +75,10 @@ All tests are located in  ***tests*** folder
 To run all the tests from the root directory, you can use the following command:
 For the command to work, you need to perform the following steps:
 1. Clone the project
-2. Install all dependencies from the file requirements.txt
-3. Open the folder with the project and copy the path to it
-4. In the pytest.ini paste the previously copied path into the line pythonpath
+2. Create and activate virtual environment
+3. Install all dependencies from the file requirements.txt
+4. Open the folder with the project and copy the path to it
+5. In the pytest.ini paste the previously copied path into the line pythonpath
 ```shell
  pytest
 ```

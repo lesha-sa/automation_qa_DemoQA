@@ -2,7 +2,6 @@ from pages.elements_page.check_box_page import CheckBoxPage
 from read_configuration import read_configuration
 
 
-
 class TestCheckBox:
     def test_check_box(self, driver):
         url = read_configuration()

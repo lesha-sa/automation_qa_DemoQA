@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class BasePage:
     """
-    Methods for finding elements on a page
+    Contains methods for finding elements on a page
     """
     def __init__(self, driver, url):
         self.driver = driver

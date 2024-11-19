@@ -1,13 +1,13 @@
 from data.data import Person
 from faker import Faker
 
-"""
-Сreate random data for Person
-"""
 faker_ru = Faker('ru_RU')
 Faker.seed()
 
 def generated_person():
+    """
+    Сreate random data for Person
+    """
     yield Person(
        full_name = faker_ru.first_name() + " " + faker_ru.last_name() + " " + faker_ru.middle_name(),
         email= faker_ru.email(),

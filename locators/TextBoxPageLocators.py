@@ -1,12 +1,11 @@
 from selenium.webdriver.common.by import By
 
-"""
 
-Locators for the page https://demoqa.com/text-box
-
-"""
 
 class TextBoxPageLocators:
+    """
+    Locators for the page https://demoqa.com/text-box
+    """
     #form fields
     FULL_NAME = (By.CSS_SELECTOR, 'input[placeholder="Full Name"]')
     EMAIL = (By.XPATH, '//*[@placeholder="name@example.com"]')

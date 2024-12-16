@@ -7,6 +7,10 @@ from pages.base_page import BasePage
 
 
 class WebTablePage(BasePage):
+    """
+    WebTablePage contains methods: 'add_new_person', 'check_new_added_person', 'search_some_person',
+    'update_person_info', 'delete_person', 'check_deleted', 'select_up_to_some_rows', 'check_count_rows'
+    """
     locators = WebTablePageLocators()
 
     def add_new_person(self):

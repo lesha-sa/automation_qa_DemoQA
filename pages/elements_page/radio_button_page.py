@@ -3,6 +3,9 @@ from locators.RadioButtonPageLocators import RadioButtonPageLocators
 
 
 class RadioButtonPage(BasePage):
+    """
+        RadioButtonPage contains methods: 'click_on_the_radio_button', 'get_output_result'
+        """
     locators = RadioButtonPageLocators()
 
     def click_on_the_radio_button(self, choice):

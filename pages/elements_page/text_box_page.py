@@ -4,6 +4,9 @@ from pages.base_page import BasePage
 
 
 class TextBoxPage(BasePage):
+    """
+        TextBoxPage contains methods: 'fill_all_field', 'check_filled_form'
+        """
     locators = TextBoxPageLocators()
 
     def fill_all_field(self):

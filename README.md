@@ -41,31 +41,35 @@ related info: https://loguru.readthedocs.io/
 ```bash
 pip install loguru
 ```
-
+## **REQUESTS**
+pypi.org docs: https://pypi.org/project/requests/
+```bash
+pip install requests
+```
 ## **Data generators**
 
 ### Faker
 
 related info: http://faker.rtfd.org/
 ```bash
-    pip install Faker
+pip install Faker
 ```
 
 ## Preparation before running tests
 Create virtual environment.
 To create a virtual environment, execute the following commands in the command line:
 ```bash
-    pip install virtualenv
+pip install virtualenv
 ```
 To activate the virtual environment:
 
 ```bash
-  venv\Scripts\activate
+venv\Scripts\activate
 ```
 
 All used packages are stored in requirements.txt
 ```bash
-    pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Tests

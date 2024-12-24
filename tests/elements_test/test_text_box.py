@@ -4,7 +4,6 @@ from logger_config.logger import get_logger
 
 logger = get_logger()
 
-
 class TestTextBox:
     def test_text_box(self, driver):
         url = read_configuration()

@@ -1,6 +1,6 @@
 import random
 
-from locators.CheckBoxPageLocators import CheckBoxPageLocators
+from locators.elements_page_locators.CheckBoxPageLocators import CheckBoxPageLocators
 from pages.base_page import BasePage
 
 

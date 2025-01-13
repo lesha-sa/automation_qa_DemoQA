@@ -1,5 +1,5 @@
 from generator.generator import generated_person
-from locators.TextBoxPageLocators import TextBoxPageLocators
+from locators.elements_page_locators.TextBoxPageLocators import TextBoxPageLocators
 from pages.base_page import BasePage
 
 

@@ -1,8 +1,7 @@
-from faker.generator import random
 from selenium.webdriver.common.by import By
 
 from generator.generator import generated_person
-from locators.WebTablePageLocators import WebTablePageLocators
+from locators.elements_page_locators.WebTablePageLocators import WebTablePageLocators
 from pages.base_page import BasePage
 
 

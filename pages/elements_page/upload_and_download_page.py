@@ -4,7 +4,7 @@ import os
 from faker.generator import random
 
 from generator.generator import generated_file
-from locators.UploadAndDownloadPageLocators import UploadAndDownloadPageLocators
+from locators.elements_page_locators.UploadAndDownloadPageLocators import UploadAndDownloadPageLocators
 from pages.base_page import BasePage
 
 

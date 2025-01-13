@@ -1,4 +1,4 @@
-from locators.ButtonsPageLocators import ButtonsPageLocators
+from locators.elements_page_locators.ButtonsPageLocators import ButtonsPageLocators
 from pages.base_page import BasePage
 
 

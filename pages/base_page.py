@@ -1,3 +1,4 @@
+from selenium.common import TimeoutException
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC
@@ -55,3 +56,10 @@ class BasePage:
         tab = self.driver.window_handles
         select_new_tab = self.driver.switch_to.window(tab[1])
         return select_new_tab
+
+    def select_alert(self):
+        try:
+            alert = self.driver.switch_to.alert
+            return alert.text
+        except TimeoutException:
+            print("no alert")

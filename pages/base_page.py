@@ -63,3 +63,7 @@ class BasePage:
             return alert.text
         except TimeoutException:
             print("no alert")
+
+    def select_frame(self, frame_name):
+        frame = self.driver.switch_to.frame(frame_name)
+        return frame

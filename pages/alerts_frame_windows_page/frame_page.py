@@ -4,7 +4,7 @@ from pages.base_page import BasePage
 
 class FramePage(BasePage):
     """
-    AlertsPage contains methods: 'check_frame'
+    FramePage contains methods: 'check_frame'
     """
     locators = FramePageLocators()
 

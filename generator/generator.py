@@ -1,6 +1,6 @@
 from faker.generator import random
 
-from data.data import Person
+from data.data import Person, Color
 from faker import Faker
 
 faker_ru = Faker('ru_RU')
@@ -39,3 +39,8 @@ def generated_subject():
     "Commerce", "Accounting", "Economics", "Arts", "Social Studies", "History", "Civics"]
     random_subject = random.randint(0, 13)
     return all_subject[random_subject]
+
+def generated_color():
+    yield Color (
+        color_name = ["Red", "Blue", "Green", "Yellow", "Purple", "Black", "White", "Voilet", "Indigo", "Magenta", "Aqua"]
+    )

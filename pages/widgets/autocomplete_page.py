@@ -8,7 +8,7 @@ from pages.base_page import BasePage
 
 class AutoCompletePage(BasePage):
     """
-    AccordianPage contains methods: 'fill_input_multi', 'remove_value_from_multi',
+    AutoCompletePage contains methods: 'fill_input_multi', 'remove_value_from_multi',
     'check_color_in_multi', 'fill_input_single', 'check_color_in_single'
     """
     locators = AutoCompletePageLocators()

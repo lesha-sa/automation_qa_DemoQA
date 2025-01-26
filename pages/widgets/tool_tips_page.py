@@ -6,7 +6,7 @@ from pages.base_page import BasePage
 
 class ToolTipsPage(BasePage):
     """
-    AccordianPage contains methods: 'get_text_from_tool_tips', 'check_tool_tips',
+    ToolTipsPage contains methods: 'get_text_from_tool_tips', 'check_tool_tips',
     """
     locators = ToolTipsPageLocators()
 

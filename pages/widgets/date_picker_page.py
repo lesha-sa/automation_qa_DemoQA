@@ -7,7 +7,7 @@ from pages.base_page import BasePage
 
 class DatePickerPage(BasePage):
     """
-    AccordianPage contains methods: 'select_date', 'select_date_and_time', 'set_date_by_text',
+    DatePickerPage contains methods: 'select_date', 'select_date_and_time', 'set_date_by_text',
      'set_date_item_from_list'
     """
 

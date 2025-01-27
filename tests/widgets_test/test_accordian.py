@@ -1,4 +1,4 @@
-from pages.widgets.accordian_page import AccordianPage
+from pages.widgets_page.accordian_page import AccordianPage
 from read_configuration import read_configuration
 
 

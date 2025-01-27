@@ -1,4 +1,4 @@
-from pages.widgets.progress_bar_page import ProgressBarPage
+from pages.widgets_page.progress_bar_page import ProgressBarPage
 from read_configuration import read_configuration
 
 

@@ -1,4 +1,4 @@
-from pages.widgets.menu_page import MenuPage
+from pages.widgets_page.menu_page import MenuPage
 from read_configuration import read_configuration
 
 

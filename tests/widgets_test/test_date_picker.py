@@ -1,6 +1,6 @@
 from attr import dataclass
 
-from pages.widgets.date_picker_page import DatePickerPage
+from pages.widgets_page.date_picker_page import DatePickerPage
 from read_configuration import read_configuration
 
 

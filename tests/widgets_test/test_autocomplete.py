@@ -1,6 +1,6 @@
 import time
 
-from pages.widgets.autocomplete_page import AutoCompletePage
+from pages.widgets_page.autocomplete_page import AutoCompletePage
 from read_configuration import read_configuration
 
 

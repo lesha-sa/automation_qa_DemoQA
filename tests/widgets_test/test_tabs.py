@@ -1,4 +1,4 @@
-from pages.widgets.tabs_page import TabsPage
+from pages.widgets_page.tabs_page import TabsPage
 from read_configuration import read_configuration
 
 

@@ -1,4 +1,4 @@
-from pages.widgets.tool_tips_page import ToolTipsPage
+from pages.widgets_page.tool_tips_page import ToolTipsPage
 from read_configuration import read_configuration
 
 

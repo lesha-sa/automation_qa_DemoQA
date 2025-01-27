@@ -1,4 +1,4 @@
-from pages.widgets.slider_page import SliderPage
+from pages.widgets_page.slider_page import SliderPage
 from read_configuration import read_configuration
 
 

@@ -15,7 +15,7 @@ class SortablePage(BasePage):
         """
         create an item list
         :param elements:
-        :return:
+        :return: [item.text for item in item_list]
         """
         item_list = self.element_are_visible(elements)
         return [item.text for item in item_list]

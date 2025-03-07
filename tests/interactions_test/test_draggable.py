@@ -1,9 +1,13 @@
+import allure
+
 from pages.interactions_page.draggable_page import DraggablePage
 from read_configuration import read_configuration
 
-
+@allure.suite('Interactions')
+@allure.feature('Draggable page')
 class TestDraggablePage:
 
+    @allure.title('Simple draggable')
     def test_simple_draggable(self, driver):
         url = read_configuration()
         draggable_page = DraggablePage(driver, f'{url}/dragabble')
@@ -11,6 +15,7 @@ class TestDraggablePage:
         before, after = draggable_page.simple_drag_box()
         assert before != after, 'the position of the box has not been changed'
 
+    @allure.title('Axis restricted draggable')
     def test_axis_restricted_draggable(self, driver):
         url = read_configuration()
         draggable_page = DraggablePage(driver, f'{url}/dragabble')

@@ -1,3 +1,4 @@
+import allure
 from faker.generator import random
 
 from locators.interactions_page_locators.SortablePageLocators import SortablePageLocators
@@ -11,6 +12,7 @@ class SortablePage(BasePage):
 
     locators = SortablePageLocators()
 
+    @allure.step('Get sortable items')
     def get_sortable_items(self, elements):
         """
         create an item list
@@ -20,6 +22,7 @@ class SortablePage(BasePage):
         item_list = self.element_are_visible(elements)
         return [item.text for item in item_list]
 
+    @allure.step('Change list order')
     def change_list_order(self):
         """
         click on the tab list
@@ -40,6 +43,7 @@ class SortablePage(BasePage):
         order_after = self. get_sortable_items(self.locators.LIST_ITEM)
         return order_before, order_after
 
+    @allure.step('Change grid order')
     def change_grid_order(self):
         """
         click on the tab list

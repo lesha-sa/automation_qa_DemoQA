@@ -1,8 +1,13 @@
+import allure
+
 from pages.elements_page.check_box_page import CheckBoxPage
 from read_configuration import read_configuration
 
-
+@allure.suite('Elements')
+@allure.feature('CheckBox')
 class TestCheckBox:
+
+    @allure.title('Check Box')
     def test_check_box(self, driver):
         url = read_configuration()
         check_box_page = CheckBoxPage(driver, f'{url}/checkbox')

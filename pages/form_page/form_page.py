@@ -1,5 +1,6 @@
 import os
 
+import allure
 from selenium.webdriver import Keys
 
 from generator.generator import generated_file, generated_person, generated_subject
@@ -14,6 +15,7 @@ class FormPage(BasePage):
 
     locators = FormPageLocators()
 
+    @allure.step('Fill form fields')
     def fill_form_fields(self):
         """
         Fill in the form with data
@@ -40,6 +42,7 @@ class FormPage(BasePage):
         self.element_is_visible(self.locators.SUBMIT).click()
         return person
 
+    @allure.step('Form result')
     def form_result(self):
         """
         Create a list with the data received from the form for further comparison

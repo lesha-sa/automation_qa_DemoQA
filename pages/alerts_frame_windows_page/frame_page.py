@@ -1,3 +1,5 @@
+import allure
+
 from locators.alerts_frame_windows_page_locators.FramePageLocators import FramePageLocators
 from pages.base_page import BasePage
 
@@ -8,6 +10,7 @@ class FramePage(BasePage):
     """
     locators = FramePageLocators()
 
+    @allure.step('Check frame')
     def check_frame(self, frame_num):
         """
         Find the frame, its width and height, switch to the frame, take the text from it

@@ -1,9 +1,13 @@
+import allure
+
 from pages.alerts_frame_windows_page.frame_page import FramePage
 from read_configuration import read_configuration
 
-
+@allure.suite('Alerts frame windows')
+@allure.feature('Frame Page')
 class TestFramePage:
 
+    @allure.title('Frame')
     def test_frame(self, driver):
         url = read_configuration()
         frame_page = FramePage(driver, f'{url}/frames')

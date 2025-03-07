@@ -1,9 +1,13 @@
+import allure
+
 from pages.interactions_page.sortable_page import SortablePage
 from read_configuration import read_configuration
 
-
+@allure.suite('Interactions')
+@allure.feature('Sortable page')
 class TestSortablePage:
 
+    @allure.title('Sortable')
     def test_sortable(self, driver):
         url = read_configuration()
         sortable_page = SortablePage(driver, f'{url}/sortable')

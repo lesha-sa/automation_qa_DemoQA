@@ -1,3 +1,4 @@
+import allure
 from faker.generator import random
 
 from locators.interactions_page_locators.SelectablePageLocators import SelectablePageLocators
@@ -11,6 +12,7 @@ class SelectablePage(BasePage):
 
     locators = SelectablePageLocators()
 
+    @allure.step('Click selectable item')
     def click_selectable_item(self, elements):
         """
         Assign all items in item_list
@@ -19,6 +21,7 @@ class SelectablePage(BasePage):
         item_list = self.element_are_visible(elements)
         random.sample(item_list, k=1)[0].click()
 
+    @allure.step('Select list item')
     def select_list_item(self):
         """
         Click on Tab List
@@ -31,6 +34,7 @@ class SelectablePage(BasePage):
         active_element = self.element_is_visible(self.locators.LIST_ITEM_ACTIVE)
         return active_element.text
 
+    @allure.step('Select grid item')
     def select_grid_item(self):
         """
         Click on Tab Grid

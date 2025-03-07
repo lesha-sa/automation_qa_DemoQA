@@ -1,9 +1,13 @@
+import allure
+
 from pages.widgets_page.tabs_page import TabsPage
 from read_configuration import read_configuration
 
-
+@allure.suite('Widgets')
+@allure.feature('Tabs page')
 class TestTabsPage:
 
+    @allure.title('Tabs')
     def test_tabs(self, driver):
         url = read_configuration()
         tabs_page = TabsPage(driver, f'{url}/tabs')

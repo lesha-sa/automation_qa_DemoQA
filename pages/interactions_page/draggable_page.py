@@ -1,5 +1,6 @@
 import re
 
+import allure
 from faker.generator import random
 
 from locators.interactions_page_locators.DraggablePageLocators import DraggablePageLocators
@@ -13,6 +14,7 @@ class DraggablePage(BasePage):
     """
     locators = DraggablePageLocators
 
+    @allure.step('Get before and after position')
     def get_before_and_after_position(self, drag_element):
         """
         Moves the drag box and writes the “style” attribute data to the before_position variable
@@ -26,6 +28,7 @@ class DraggablePage(BasePage):
         after_position = drag_element.get_attribute('style')
         return before_position, after_position
 
+    @allure.step('Simple drag box')
     def simple_drag_box(self):
         """
         Select drag box and pass data to before_position, after_position
@@ -35,18 +38,21 @@ class DraggablePage(BasePage):
         before_position, after_position = self.get_before_and_after_position(drag_div)
         return before_position, after_position
 
+    @allure.step('Get top position')
     def get_top_position(self, positions):
         """
         Format the data for future use
         """
         return re.findall(r'\d[0-9] | \d', positions.split(';')[2])
 
+    @allure.step('Get left position')
     def get_left_position(self, positions):
         """
         Format the data for future use
         """
         return re.findall(r'\d[0-9] | \d', positions.split(';')[1])
 
+    @allure.step('Axis restricted')
     def axis_restricted(self,type_axis):
         """
         Create a dictionary for selecting a box by the keys:

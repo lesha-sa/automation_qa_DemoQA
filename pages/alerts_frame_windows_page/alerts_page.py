@@ -1,6 +1,8 @@
 import random
 import time
 
+import allure
+
 from locators.alerts_frame_windows_page_locators.AlertsPageLocators import AlertsPageLocators
 from pages.base_page import BasePage
 
@@ -13,6 +15,7 @@ class AlertsPage(BasePage):
 
     locators = AlertsPageLocators()
 
+    @allure.step('Check see alert')
     def check_see_alert(self):
         """
         Click on the button and switch to alerts
@@ -22,6 +25,7 @@ class AlertsPage(BasePage):
         alert = self.select_alert()
         return alert
 
+    @allure.step('Check alert appear 5 sec')
     def check_alert_appear_5_sec(self):
         """
         Click on the button, wait 5 seconds and switch to alerts
@@ -32,6 +36,7 @@ class AlertsPage(BasePage):
         alert = self.select_alert()
         return alert
 
+    @allure.step('Check confirm alert')
     def check_confirm_alert(self):
         """
         Click on the button, switch to alerts and confirm
@@ -43,6 +48,7 @@ class AlertsPage(BasePage):
         text_result = self.element_is_present(self.locators.CONFIRM_RESULT).text
         return text_result
 
+    @allure.step('Check promt alert')
     def check_promt_alert(self):
         """
         Click on the button, switch to alerts, send text and random number in the range 0 - 999б and confirm

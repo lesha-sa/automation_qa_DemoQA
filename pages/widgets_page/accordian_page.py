@@ -1,3 +1,4 @@
+import allure
 from selenium.common import TimeoutException
 
 from locators.widgets_page_locators.AccordianPageLocators import AccordianPageLocators
@@ -11,6 +12,7 @@ class AccordianPage(BasePage):
 
     locators = AccordianPageLocators()
 
+    @allure.step('Check accordian')
     def check_accordian(self, accordian_num):
         """
         Create a dictionary for element reference and fill it with widget data

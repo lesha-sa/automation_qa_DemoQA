@@ -1,9 +1,13 @@
+import allure
+
 from pages.widgets_page.accordian_page import AccordianPage
 from read_configuration import read_configuration
 
-
+@allure.suite('Widgets')
+@allure.feature('According page')
 class TestAccordingPage:
 
+    @allure.title('Accordian')
     def test_accordian(self, driver):
         url = read_configuration()
         accordian_page = AccordianPage(driver, f'{url}/accordian')

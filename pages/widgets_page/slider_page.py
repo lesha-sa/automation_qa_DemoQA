@@ -1,5 +1,7 @@
 import random
 
+import allure
+
 from locators.widgets_page_locators.SliderPageLocators import SliderPageLocators
 from pages.base_page import BasePage
 
@@ -11,6 +13,7 @@ class SliderPage(BasePage):
 
     locators = SliderPageLocators()
 
+    @allure.step('Change slider value')
     def change_slider_value(self):
         """
         Pass data slider to value_before

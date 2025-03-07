@@ -1,3 +1,4 @@
+import allure
 import requests
 
 from locators.elements_page_locators.LinksPageLocators import LinksPageLocators
@@ -10,6 +11,7 @@ class LinksPage(BasePage):
     """
     locators = LinksPageLocators()
 
+    @allure.step('Check new tab simple link')
     def check_new_tab_simple_link(self):
         """
         assign the simple_link attribute to link_href
@@ -21,24 +23,26 @@ class LinksPage(BasePage):
         simple_link = self.element_is_visible(self.locators.SIMPLE_LINK)
         link_href = simple_link.get_attribute('href')
         request = requests.get(link_href)
-        if request.status_code == 200:
-            simple_link.click()
-            self.driver.switch_to.window(self.driver.window_handles[1])
-            url = self.driver.current_url
-            return link_href, url
-        else:
-            return link_href, request.status_code
+        with allure.step('Request status code 200'):
+            if request.status_code == 200:
+                simple_link.click()
+                self.driver.switch_to.window(self.driver.window_handles[1])
+                url = self.driver.current_url
+                return link_href, url
+            else:
+                return link_href, request.status_code
 
-
+    @allure.step('Check broken list')
     def check_broken_list(self, url):
         """
         send get request to url and if status code 200 click on link
-otherwise return status code
+        otherwise return status code
         :param url:
         :return: request.status_code
         """
-        request = requests.get(url)
-        if request.status_code == 200:
-            self.element_is_present(self.locators.BAD_REQUEST).click()
-        else:
-            return request.status_code
+        with allure.step('Request status code 200'):
+            request = requests.get(url)
+            if request.status_code == 200:
+                self.element_is_present(self.locators.BAD_REQUEST).click()
+            else:
+                return request.status_code

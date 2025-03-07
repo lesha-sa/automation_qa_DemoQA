@@ -1,5 +1,7 @@
 import time
 
+import allure
+
 from locators.widgets_page_locators.ToolTipsPageLocators import ToolTipsPageLocators
 from pages.base_page import BasePage
 
@@ -8,8 +10,10 @@ class ToolTipsPage(BasePage):
     """
     ToolTipsPage contains methods: 'get_text_from_tool_tips', 'check_tool_tips',
     """
+
     locators = ToolTipsPageLocators()
 
+    @allure.step('Get text from tool tips')
     def get_text_from_tool_tips(self, hover_elem, wait_elem):
         """
         The cursor moves to the center of the element
@@ -26,6 +30,7 @@ class ToolTipsPage(BasePage):
         text = tool_tip_text.text
         return text
 
+    @allure.step('Check tool tips')
     def check_tool_tips(self):
         """
         Move the cursor over the element and wait for the element to appear.

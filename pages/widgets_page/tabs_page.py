@@ -1,3 +1,5 @@
+import allure
+
 from locators.widgets_page_locators.TabsPageLocators import TabsPageLocators
 from pages.base_page import BasePage
 
@@ -9,6 +11,7 @@ class TabsPage(BasePage):
 
     locators = TabsPageLocators()
 
+    @allure.step('Check tabs')
     def check_tabs(self, name_tab):
         """
         Fill the dictionary with the name of the tabs and their contents

@@ -1,9 +1,13 @@
+import allure
+
 from pages.widgets_page.tool_tips_page import ToolTipsPage
 from read_configuration import read_configuration
 
-
+@allure.suite('Widgets')
+@allure.feature('Tool tips page')
 class TestToolTipsPage:
 
+    @allure.title('Tool tips page')
     def test_tool_tips_page(self, driver):
         url = read_configuration()
         tool_tips_page = ToolTipsPage(driver, f'{url}/tool-tips')

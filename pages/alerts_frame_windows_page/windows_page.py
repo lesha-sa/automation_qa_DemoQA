@@ -1,3 +1,5 @@
+import allure
+
 from locators.alerts_frame_windows_page_locators.WindowsPageLocators import BrowserWindowsPageLocators
 from pages.base_page import BasePage
 
@@ -9,6 +11,7 @@ class BrowserWindowsPage(BasePage):
 
     locators = BrowserWindowsPageLocators()
 
+    @allure.step('Check opened new tab')
     def check_opened_new_tab(self):
         """
         Click on the button, go to the new tab that opens, and take the text from the new tab
@@ -19,6 +22,7 @@ class BrowserWindowsPage(BasePage):
         text_title = self.element_is_present(self.locators.TITLE_NEW).text
         return text_title
 
+    @allure.step('Check opened new window')
     def check_opened_new_window(self):
         """
         Click on the button, go to the new window that opens, and take the text from the new window

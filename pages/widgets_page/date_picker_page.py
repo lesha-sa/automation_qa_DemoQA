@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.support.select import Select
 
 from generator.generator import generated_date
@@ -11,10 +12,9 @@ class DatePickerPage(BasePage):
      'set_date_item_from_list'
     """
 
-
     locators = DatePickerPageLocators()
 
-
+    @allure.step('Select date')
     def select_date(self):
         """
         Click on the date input and select a value and click on it
@@ -31,7 +31,7 @@ class DatePickerPage(BasePage):
         value_date_after = input_date.get_attribute('value')
         return value_date_before, value_date_after
 
-
+    @allure.step('Select date and time')
     def select_date_and_time(self):
         """
         Click on the date input and select a value and click on it
@@ -52,7 +52,7 @@ class DatePickerPage(BasePage):
         value_date_after = input_date_after.get_attribute('value')
         return value_date_before, value_date_after
 
-
+    @allure.step('Set date by text')
     def set_date_by_text(self, element, value):
         """
         Selecting by visible text
@@ -60,6 +60,7 @@ class DatePickerPage(BasePage):
         select = Select(self.element_is_present(element))
         select.select_by_visible_text(value)
 
+    @allure.step('Set date item from list')
     def set_date_item_from_list(self, elements, value):
         """
         Select a date from the data list

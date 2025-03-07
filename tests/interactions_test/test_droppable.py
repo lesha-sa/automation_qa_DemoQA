@@ -1,9 +1,13 @@
+import allure
+
 from pages.interactions_page.droppable_page import DroppablePage
 from read_configuration import read_configuration
 
-
+@allure.suite('Interactions')
+@allure.feature('Droppable page')
 class TestDroppablePage:
 
+    @allure.title('Simple droppable')
     def test_simple_droppable(self, driver):
         url = read_configuration()
         droppable_page = DroppablePage(driver, f'{url}/droppable')
@@ -11,6 +15,7 @@ class TestDroppablePage:
         text = droppable_page.drop_simple()
         assert text == 'Dropped!', 'the elements has not been dropped'
 
+    @allure.title('Accept droppable')
     def test_accept_droppable(self, driver):
         url = read_configuration()
         droppable_page = DroppablePage(driver, f'{url}/droppable')
@@ -19,6 +24,7 @@ class TestDroppablePage:
         assert not_accept == 'Drop here', 'the dropped element has been accepted'
         assert accept == 'Dropped!', 'the dropped element has not been accepted'
 
+    @allure.title('Prevent droppable')
     def test_prevent_droppable(self, driver):
         url = read_configuration()
         droppable_page = DroppablePage(driver, f'{url}/droppable')
@@ -29,6 +35,7 @@ class TestDroppablePage:
         assert greedy == 'Outer droppable', 'the elements texts has not been changed'
         assert greedy_inner == 'Dropped!', 'the elements texts has not been changed'
 
+    @allure.title('Revert draggable droppable')
     def test_revert_draggable_droppable(self, driver):
         url = read_configuration()
         droppable_page = DroppablePage(driver, f'{url}/droppable')

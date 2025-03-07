@@ -1,6 +1,8 @@
 import random
 import time
 
+import allure
+
 from locators.widgets_page_locators.ProgressBarPageLocators import ProgressBarPageLocators
 from pages.base_page import BasePage
 
@@ -12,6 +14,7 @@ class ProgressBarPage(BasePage):
 
     locators = ProgressBarPageLocators()
 
+    @allure.step('Change progress bar value')
     def change_progress_bar_value(self):
         """
         Pass progress bar data to value_before

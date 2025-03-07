@@ -1,3 +1,4 @@
+import allure
 from faker.generator import random
 from selenium.webdriver import Keys
 
@@ -13,6 +14,7 @@ class AutoCompletePage(BasePage):
     """
     locators = AutoCompletePageLocators()
 
+    @allure.step(' Fill input multi')
     def fill_input_multi(self):
         """
         Add a random number of colors and add 1 each to the color variable
@@ -26,6 +28,7 @@ class AutoCompletePage(BasePage):
             input_multi.send_keys(Keys.ENTER)
         return colors
 
+    @allure.step('Remove value from multi')
     def remove_value_from_multi(self):
         """
         Take the number of colors before removal and after removal
@@ -40,6 +43,7 @@ class AutoCompletePage(BasePage):
         count_value_after = len(self.element_are_present(self.locators.MULTI_VALUE))
         return count_value_before, count_value_after
 
+    @allure.step('Check color in multi')
     def check_color_in_multi(self):
         """
         Create a list of colors for comparison
@@ -51,6 +55,7 @@ class AutoCompletePage(BasePage):
             colors.append(color.text)
         return colors
 
+    @allure.step('Fill input single')
     def fill_input_single(self):
         """
         Send a random color to input and hit enter.
@@ -62,6 +67,7 @@ class AutoCompletePage(BasePage):
         input_single.send_keys(Keys.ENTER)
         return color[0]
 
+    @allure.step('Check color in single')
     def check_color_in_single(self):
         """
         Color check

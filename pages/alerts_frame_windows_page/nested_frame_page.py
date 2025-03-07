@@ -1,3 +1,5 @@
+import allure
+
 from locators.alerts_frame_windows_page_locators.NestedFramePageLocators import NestedFramePageLocators
 from pages.base_page import BasePage
 
@@ -8,6 +10,7 @@ class NestedFramePage(BasePage):
     """
     locators = NestedFramePageLocators()
 
+    @allure.step('Check nested frame')
     def check_nested_frame(self):
         """
         Switch to the parent frame, parse the text

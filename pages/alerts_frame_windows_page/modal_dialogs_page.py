@@ -1,3 +1,5 @@
+import allure
+
 from locators.alerts_frame_windows_page_locators.ModalDialogsPageLocators import ModalDialogsPageLocators
 from pages.base_page import BasePage
 
@@ -8,6 +10,7 @@ class ModalDialogsPage(BasePage):
     """
     locators = ModalDialogsPageLocators()
 
+    @allure.step('Checl model dialogs')
     def check_model_dialogs(self):
         """
         Click on Small modal button, parse title and text from body, close

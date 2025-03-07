@@ -1,9 +1,13 @@
+import allure
+
 from pages.interactions_page.resizable_page import ResizablePage
 from read_configuration import read_configuration
 
-
+@allure.suite('Interactions')
+@allure.feature('Resizable page')
 class TestResizablePage:
 
+    @allure.title('Resizable page')
     def test_resizable_page(self, driver):
         url = read_configuration()
         resizable_page = ResizablePage(driver, f'{url}/resizable')

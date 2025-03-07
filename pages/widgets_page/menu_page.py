@@ -1,3 +1,5 @@
+import allure
+
 from locators.widgets_page_locators.MenuPageLocators import MenuPageLocators
 from pages.base_page import BasePage
 
@@ -9,6 +11,7 @@ class MenuPage(BasePage):
 
     locators = MenuPageLocators()
 
+    @allure.step('Check menu')
     def check_menu(self):
         """
         Save all items in the list

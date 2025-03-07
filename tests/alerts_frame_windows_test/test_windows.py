@@ -1,9 +1,13 @@
+import allure
+
 from pages.alerts_frame_windows_page.windows_page import BrowserWindowsPage
 from read_configuration import read_configuration
 
-
+@allure.suite('Alerts frame windows')
+@allure.feature('Browser Windows')
 class TestBrowserWindows:
 
+    @allure.title('New tab')
     def test_new_tab(self, driver):
         url = read_configuration()
         browser_new_tab_page = BrowserWindowsPage(driver, f'{url}/browser-windows')
@@ -11,7 +15,7 @@ class TestBrowserWindows:
         text_result = browser_new_tab_page.check_opened_new_tab()
         assert text_result == 'This is a sample page', "A new tab has not opened or an incorrect tab has opened"
 
-
+    @allure.title('New window')
     def test_new_window(self, driver):
         url = read_configuration()
         browser_window_page = BrowserWindowsPage(driver, f'{url}/browser-windows')

@@ -1,5 +1,7 @@
 import time
 
+import allure
+
 from locators.interactions_page_locators.DroppablePageLocators import DroppablePageLocators
 from pages.base_page import BasePage
 
@@ -11,6 +13,7 @@ class DroppablePage(BasePage):
     """
     locators = DroppablePageLocators()
 
+    @allure.step('Drop simple')
     def drop_simple(self):
         """
         Click on the tab 'Simple'
@@ -25,6 +28,7 @@ class DroppablePage(BasePage):
         self.action_drag_and_drop_to_element(drag_div, drop_div)
         return drop_div.text
 
+    @allure.step('Drop accept')
     def drop_accept(self):
         """
         Click on the tab 'Accept'
@@ -47,6 +51,7 @@ class DroppablePage(BasePage):
         drop_text_accept = drop_div.text
         return drop_text_not_accept, drop_text_accept
 
+    @allure.step('Drop prevent propogation')
     def drop_prevent_propogation(self):
         """
         Click on the tab 'Prevent Propogation'
@@ -73,6 +78,7 @@ class DroppablePage(BasePage):
         text_greedy_inner_box = greedy_inner_box.text
         return text_not_greedy_box, text_not_greedy_inner_box,text_greedy_box, text_greedy_inner_box
 
+    @allure.step('Drop revert draggable')
     def drop_revert_draggable(self, type_drag):
         """
         Create a dictionary for selecting a box by the keys:

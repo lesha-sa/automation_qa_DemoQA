@@ -1,10 +1,15 @@
 import time
 
+import allure
+
 from pages.form_page.form_page import FormPage
 from read_configuration import read_configuration
 
-
+@allure.suite('Form')
+@allure.feature('Form Page')
 class TestFormPage:
+
+    @allure.title('Test form')
     def test_form(self, driver):
         url = read_configuration()
         form_page = FormPage(driver, f'{url}/automation-practice-form')

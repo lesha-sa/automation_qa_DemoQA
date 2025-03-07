@@ -1,9 +1,13 @@
+import allure
+
 from pages.elements_page.radio_button_page import RadioButtonPage
 from read_configuration import read_configuration
 
-
+@allure.suite('Elements')
+@allure.feature('Radio button')
 class TestRadioButton:
 
+    @allure.title('Check radio button')
     def test_radio_button(self, driver):
         url = read_configuration()
         radio_button_page = RadioButtonPage(driver, f'{url}/radio-button')
@@ -16,4 +20,4 @@ class TestRadioButton:
         output_no = radio_button_page.get_output_result()
         assert output_yes == 'Yes', '"Yes" have not been selected'
         assert output_impressive == 'Impressive', '"Impressive" have not been selected'
-        #assert output_no == 'No', '"No" have not been selected'
+        assert output_no == 'No', '"No" have not been selected'

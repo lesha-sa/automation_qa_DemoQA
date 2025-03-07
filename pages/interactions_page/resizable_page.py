@@ -1,3 +1,4 @@
+import allure
 from faker.generator import random
 
 from locators.interactions_page_locators.ResizablePageLocators import ResizablePageLocators
@@ -12,6 +13,7 @@ class ResizablePage(BasePage):
 
     locators = ResizablePageLocators()
 
+    @allure.step('Get px from width height')
     def get_px_from_width_height(self, value_of_size):
         """
         Get the width and height
@@ -22,6 +24,7 @@ class ResizablePage(BasePage):
         height = value_of_size.split(';')[1].split(':')[1].replace(' ', '')
         return  width, height
 
+    @allure.step('Get max min size')
     def get_max_min_size(self, element):
         """
         Get the maximum and minimum size of the element
@@ -32,6 +35,7 @@ class ResizablePage(BasePage):
         size_value = size.get_attribute('style')
         return size_value
 
+    @allure.step('Change size resizable box')
     def change_size_resizable_box(self):
         """
         Dragging an element with a specified offset
@@ -46,6 +50,7 @@ class ResizablePage(BasePage):
         min_size = self.get_px_from_width_height(self.get_max_min_size(self.locators.RESIZABLE_BOX))
         return max_size, min_size
 
+    @allure.step('Change size resizable')
     def change_size_resizable(self):
         """
         Dragging an element with a specified offset

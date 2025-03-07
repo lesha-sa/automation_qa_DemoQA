@@ -1,17 +1,17 @@
 from itertools import count
 
+import allure
 from faker.generator import random
 
 from pages.elements_page.web_table_page import WebTablePage
 from read_configuration import read_configuration
 
-
+@allure.suite('Elements')
+@allure.feature('Web table')
 class TestWebTable:
 
+    @allure.title('Check add new person in table')
     def test_web_table_add_person(self, driver):
-        """
-        add new person to table
-        """
         url = read_configuration()
         web_table_page = WebTablePage(driver, f'{url}/webtables')
         web_table_page.open()
@@ -21,11 +21,8 @@ class TestWebTable:
         print(table_result)
         assert new_person in table_result
 
-
+    @allure.title('Check search person in table')
     def test_web_table_search_person(self, driver):
-        """
-        search person in table
-        """
         url = read_configuration()
         web_table_page = WebTablePage(driver, f'{url}/webtables')
         web_table_page.open()
@@ -34,7 +31,7 @@ class TestWebTable:
         table_result = web_table_page.check_search_person()
         assert key_word in table_result, 'the person was not found in the table'
 
-
+    @allure.title('Check update person in table')
     def test_web_table_update_person_info(self, driver):
         url = read_configuration()
         web_table_page = WebTablePage(driver, f'{url}/webtables')
@@ -45,6 +42,7 @@ class TestWebTable:
         row = web_table_page.check_search_person()
         assert age in row, "the person card has not been changed"
 
+    @allure.title('Check delete person in table')
     def test_web_table_delete_person(self, driver):
         url = read_configuration()
         web_table_page = WebTablePage(driver, f'{url}/webtables')
@@ -55,6 +53,7 @@ class TestWebTable:
         text = web_table_page.check_deleted()
         assert text == "No rows found"
 
+    @allure.title('Check change count row in table')
     def test_web_table_change_count_row(self, driver):
         url = read_configuration()
         web_table_page = WebTablePage(driver, f'{url}/webtables')

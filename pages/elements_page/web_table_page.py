@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.common.by import By
 
 from generator.generator import generated_person
@@ -12,6 +13,7 @@ class WebTablePage(BasePage):
     """
     locators = WebTablePageLocators()
 
+    @allure.step('Add new person')
     def add_new_person(self):
         """
         Fill in the person data and add it to the table using the generator
@@ -26,17 +28,20 @@ class WebTablePage(BasePage):
             age = person_info.age
             salary = person_info.salary
             department = person_info.department
-            self.element_is_visible(self.locators.ADD_BUTTON).click()
-            self.element_is_visible(self.locators.FIRSTNAME_INPUT).send_keys(firstname)
-            self.element_is_visible(self.locators.LASTNAME_INPUT).send_keys(lastname)
-            self.element_is_visible(self.locators.EMAIL_INPUT).send_keys(email)
-            self.element_is_visible(self.locators.AGE_INPUT).send_keys(age)
-            self.element_is_visible(self.locators.SALARY_INPUT).send_keys(salary)
-            self.element_is_visible(self.locators.DEPARTMENT_INPUT).send_keys(department)
-            self.element_is_visible(self.locators.SUBMIT).click()
-            count -=1
-            return [firstname, lastname,  str(age), email, str(salary), department]
+            with allure.step('Click button add new person'):
+                self.element_is_visible(self.locators.ADD_BUTTON).click()
+            with allure.step('Fill all fields'):
+                self.element_is_visible(self.locators.FIRSTNAME_INPUT).send_keys(firstname)
+                self.element_is_visible(self.locators.LASTNAME_INPUT).send_keys(lastname)
+                self.element_is_visible(self.locators.EMAIL_INPUT).send_keys(email)
+                self.element_is_visible(self.locators.AGE_INPUT).send_keys(age)
+                self.element_is_visible(self.locators.SALARY_INPUT).send_keys(salary)
+                self.element_is_visible(self.locators.DEPARTMENT_INPUT).send_keys(department)
+                self.element_is_visible(self.locators.SUBMIT).click()
+                count -=1
+                return [firstname, lastname,  str(age), email, str(salary), department]
 
+    @allure.step('Check new added person')
     def check_new_added_person(self):
         """
         add all person in list for further comparison
@@ -48,6 +53,7 @@ class WebTablePage(BasePage):
             data.append(item.text.splitlines())
         return data
 
+    @allure.step('Search some person')
     def search_some_person(self, key_word):
         """
         :param key_word: find some person
@@ -55,11 +61,13 @@ class WebTablePage(BasePage):
         """
         self.element_is_visible(self.locators.SEARCH_INPUT).send_keys(key_word)
 
+    @allure.step('Check search person')
     def check_search_person(self):
         delete_button = self.element_is_present(self.locators.DELETE_BUTTON)
         row = delete_button.find_element("xpath", self.locators.ROW_PARENT)
         return row.text.splitlines()
 
+    @allure.step('Update person info')
     def update_person_info(self):
         person_info = next(generated_person())
         age = person_info.age
@@ -69,18 +77,21 @@ class WebTablePage(BasePage):
         self.element_is_visible(self.locators.SUBMIT).click()
         return str(age)
 
+    @allure.step('Delete person')
     def delete_person(self):
         """
         Delete person
         """
         self.element_is_visible(self.locators.DELETE_BUTTON).click()
 
+    @allure.step('Check deleted')
     def check_deleted(self):
         """
         Check deleted person
         """
         return self.element_is_present(self.locators.NO_ROWS_FOUND).text
 
+    @allure.step('Select up to some rows')
     def select_up_to_some_rows(self):
         """
         Select all the lines in turn
@@ -96,6 +107,7 @@ class WebTablePage(BasePage):
             data.append(self.check_count_rows())
         return data
 
+    @allure.step('Check count rows')
     def check_count_rows(self):
         """
         Go through all available lines
